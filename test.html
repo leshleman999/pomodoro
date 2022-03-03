@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- must link in order due to cascading variables -->
+    <!-- typically the global would be stored at the root -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <h2>pomodoro</h2>
+    <nav>
+        <!-- "active" is included in the default active button -->
+        <div onclick="timer.select('pomodoro')" id="pomodoro" class="activePointer menuitem">pomodoro</div>
+        <div onclick='timer.select("shortbreak")' id="shortbreak" class="pointer menuitem">short break</div>
+        <div onclick="timer.select('longbreak')" id="longbreak" class="pointer menuitem">long break</div>
+    </nav>
+
+    <h1 id="counter">25.00</h1>
+    <div class="stopstartreset">
+        <div onclick="timer.start()" class="activeState state" id="starter">start</div>
+        <div onclick="timer.pause()" class="inactiveState state" id="pauser">pause</div>
+        <div onclick="timer.reset()" class="inactiveState state" id="resetter">reset</div>
+    </div>
+    
+    <!-- the order of these cascades for accessibility -->
+    <script src="./js/timer.js"></script>
+    <script src="./js/settings.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        // no () after timer becuase we are not running it as a function
+        // let timer = new Timer;
+    </script>
+</body>
+</html>
